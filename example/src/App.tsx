@@ -1,15 +1,21 @@
-import { Grid } from 'ui-lib-examples';
 import { Button } from 'ui-lib-examples';
-import { User as UserIcon } from 'ui-lib-examples/dist/esm/icons';
+import {
+  User as UserIcon,
+  Database as DatabaseIcon,
+} from 'ui-lib-examples/dist/esm/icons';
+import { Box } from '@mui/material';
 
-function App() {
+export default function App(): JSX.Element {
   return (
-    <div>
-      <Button>WEW</Button>
-      <UserIcon />
-      <Grid>Dang</Grid>
-    </div>
+    <Box sx={{ textAlign: 'center', mt: 10 }}>
+      <Button
+        size="large"
+        variant="contained"
+        startIcon={<UserIcon />}
+        endIcon={<DatabaseIcon />}
+      >
+        HELLO WORLD
+      </Button>
+    </Box>
   );
 }
-
-export default App;

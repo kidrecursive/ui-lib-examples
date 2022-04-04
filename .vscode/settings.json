@@ -1,0 +1,4 @@
+{
+  "module-templates.engine": "handlebars",
+  "module-templates.templateFiles": ["./ui-lib.module-templates.json"]
+}

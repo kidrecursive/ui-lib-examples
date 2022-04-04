@@ -1,13 +1,13 @@
 import '@testing-library/jest-dom';
 import { render } from '@testing-library/react';
-import Button from './Button';
+import ThemeProvider from './ThemeProvider';
 
-describe('Button', () => {
+describe('ThemeProvider', () => {
   it('renders without crashing', () => {
     render(
-      <Button>
+      <ThemeProvider>
         <></>
-      </Button>
+      </ThemeProvider>
     );
   });
 });

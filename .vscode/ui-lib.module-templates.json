@@ -1,0 +1,116 @@
+{
+  "ts-react-component": {
+    "displayName": "TS React Component",
+    "defaultPath": "src/components",
+    "folder": "{{name}}",
+    "questions": {
+      "name": "Component Name"
+    },
+    "files": [
+      {
+        "name": "{{name}}.tsx",
+        "content": [
+          "import React from 'react';",
+          "",
+          "interface Props {}",
+          "",
+          "export default function {{name}}({}: Props): JSX.Element {",
+          "  return <>{{name}}</>;",
+          "}",
+          ""
+        ]
+      },
+      {
+        "name": "{{name}}.test.tsx",
+        "content": [
+          "import '@testing-library/jest-dom';",
+          "import { render } from '@testing-library/react';",
+          "import {{name}} from './{{name}}';",
+          "",
+          "describe('{{name}}', () => {",
+          "  it('renders without crashing', () => {",
+          "    render(<{{name}} />);",
+          "  });",
+          "});",
+          ""
+        ]
+      },
+      {
+        "name": "{{name}}.stories.tsx",
+        "content": [
+          "import React from 'react';",
+          "import { ComponentStory, ComponentMeta } from '@storybook/react';",
+          "import {{name}} from './{{name}}';",
+          "",
+          "export default {",
+          "  title: 'Example/{{name}}',",
+          "  component: {{name}},",
+          "  argTypes: {",
+          "    backgroundColor: { control: 'color' },",
+          "  },",
+          "} as ComponentMeta<typeof {{name}}>;",
+          "",
+          "const Template: ComponentStory<typeof {{name}}> = args => <{{name}} {...args} />;",
+          "",
+          "export const Primary = Template.bind({});",
+          "",
+          "Primary.args = {",
+          "  children: 'My {{name}}',",
+          "};",
+          ""
+        ]
+      },
+      {
+        "name": "index.ts",
+        "content": ["export { default } from './{{name}}';", ""]
+      }
+    ]
+  },
+  "ts-react-hook": {
+    "displayName": "TS React Hook",
+    "defaultPath": "src/hooks",
+    "folder": "{{name}}",
+    "questions": {
+      "name": "Hook Name"
+    },
+    "files": [
+      {
+        "name": "{{name}}.tsx",
+        "content": [
+          "import React from 'react';",
+          "",
+          "interface HookReturn {}",
+          "",
+          "export default function {{name}}(): HookReturn {",
+          "  return {};",
+          "}",
+          ""
+        ]
+      },
+      {
+        "name": "{{name}}.test.tsx",
+        "content": [
+          "import '@testing-library/jest-dom';",
+          "import { render } from '@testing-library/react';",
+          "import {{name}} from './{{name}}';",
+          "",
+          "function ComponentWithHook(): JSX.Element {",
+          "  const {} = {{name}}();",
+          "  return <></>;",
+          "}",
+          "",
+          "describe('{{name}}', () => {",
+          "  it('renders without crashing', () => {",
+          "    render(<ComponentWithHook />);",
+          "  });",
+          "});",
+          ""
+        ]
+      },
+      {
+        "name": "index.ts",
+        "content": ["export { default } from './{{name}}';", ""]
+      }
+    ]
+  }
+}

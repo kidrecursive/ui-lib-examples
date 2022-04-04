@@ -4,7 +4,7 @@
       "paths": {
         "react": ["node_modules/react"],
         "react-dom": ["node_modules/react-dom"],
-        "@material-ui/*": ["node_modules/@material-ui"]
+        "@mui/*": ["node_modules/@mui"]
       }
     }
   }

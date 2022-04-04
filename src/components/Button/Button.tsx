@@ -1,10 +1,8 @@
-import React from 'react';
-import { Button as MUIButton } from '@material-ui/core';
+import {
+  Button as MUIButton,
+  ButtonProps as MUIButtonProps,
+} from '@mui/material';
 
-interface Props {
-  children: any;
-}
-
-export default function Button({ children }: Props): JSX.Element {
-  return <MUIButton variant="contained">{children}</MUIButton>;
+export default function Button(props: MUIButtonProps): JSX.Element {
+  return <MUIButton {...props}>{props.children}</MUIButton>;
 }
